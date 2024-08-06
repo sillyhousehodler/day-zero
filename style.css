@@ -9,15 +9,19 @@
     background-color: white; 
   }
 
+  #debugger-text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    padding: 0px 20px 0px 20px;
+  }
+
   .border-parent {
     display: grid;
     grid-template-columns: 150px 1190px 150px;
     grid-template-rows: 80px 730px 80px;
     /* background-color: lightgrey; */
-  }
-
-  .grid-outer-box {
-    /* background-color: lightsalmon; */
   }
 
   .flex-row{
@@ -56,8 +60,9 @@
   }
 
   .color-block:hover {
-    color: #000000;
-}
+    color: #00000000;
+    box-shadow: inset 0 0 5px 2px grey;
+  }
 
   #cb2, #cb3, #cb4, #cb5, #cb11, #cb12, #cb14, #cb15, #cb16, #cb17, #cb23 {
     grid-row: span 2;
@@ -71,34 +76,34 @@
     grid-row: span 3;
   }
 
-  /* #cb2, #cb14, #cb17 {
-    background-color: red;
+  #fade-text {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    text-align: center;
+    color: orange;
+    pointer-events: none;
+    animation: fadeInOut 1s;
   }
 
-  #cb1, #cb5, #cb13, #cb18 {
-    background-color: yellow;
+  .no-events, #checkbox-form > * {
+    pointer-events: none;
   }
 
-  #cb7, #cb19, #cb28 {
-    background-color: blue;
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    /* 30% {
+      top: 30%;
+    } */
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      /* top: 50%; */
+    }
   }
-
-  #cb8, #cb20 {
-    background-color: black;
-  } */
-
-  /* .color-red{
-    background-color: red;
-  }
-
-  .color-yellow{
-    background-color: yellow;
-  }
-
-  .color-blue{
-    background-color: blue;
-  }
-
-  .color-black{
-    background-color: black;
-  } */

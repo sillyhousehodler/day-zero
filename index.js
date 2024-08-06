@@ -39,6 +39,7 @@ const blackCount = 2;
 
 var activeColor = "";
 var activeCount = 0;
+var finishedCount = 0;
 
 function CheckColorBlock(event){
     target = event.target;
@@ -75,15 +76,14 @@ function CheckColorCount(currentColor){
     activeCount++;
     
     if (colorCounts[colorName] == activeCount){
-        // const finishedClass = "color-" + colorName;
-        // const finishedBlocks = document.getElementsByClassName(finishedClass);
-        // console.log(finishedClass);
-        // for (let i = 0; i < finishedBlocks.length; i++){
-        //     finishedBlocks[i].classList.remove('color-block');
-        // }
         const colorCheckBox = document.getElementById('checkbox-' + colorName);
         colorCheckBox.checked = true;
         ResetColorCount();
+        finishedCount++;
+        console.log(finishedCount);
+        if (finishedCount == 4){
+            alert("Congratulations. All colors are done!");
+        }
     }
     // UpdateActiveColorText();
 }

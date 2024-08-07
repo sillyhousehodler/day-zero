@@ -1,4 +1,6 @@
-  body {
+/* ---------------For color guess--------------- */
+
+#color-body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,4 +108,34 @@
       opacity: 0;
       /* top: 50%; */
     }
+  }
+
+  /* ---------------For Menu--------------- */
+
+  #menu-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: #cbcbc4; 
+  }
+
+  #menu-title{
+    grid-column: 2 / 3;
+    font-size: 50px;
+    font-weight: bold;
+    
+  }
+
+  #menu-container{
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .menu-item {
+    
   }

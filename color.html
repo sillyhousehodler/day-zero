@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiled Layout</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body id="color-body">
+    <h3 id="fade-text"></h3>
+    <div id="debugger-text">
+        <h3>Find the same color</h3>
+        <form id="checkbox-form">
+            <input type="checkbox" id="checkbox-yellow">
+            <label for="checkbox-yellow" style="color: goldenrod">Yellow</label><br>
+            <input type="checkbox" id="checkbox-red">
+            <label for="checkbox-red" style="color: red">Red</label><br>
+            <input type="checkbox" id="checkbox-blue">
+            <label for="checkbox-blue" style="color: blue">Blue</label><br>
+            <input type="checkbox" id="checkbox-black">
+            <label for="checkbox-black">Black</label>
+        </form>
+    </div>
+    <div class="border-parent">
+        <div></div>
+        <div class="grid-outer-box flex-row" id="flex-top">
+            <div style="width: 10px; background-color: #000000; height: 30%;"></div>
+            <div style="width: 250px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 10px; background-color: #000000; height: 90%;"></div>
+            <div style="width: 370px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 10px; background-color: #000000; height: 30%;"></div>
+            <div style="width: 240px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 10px; background-color: #000000; height: 100%;"></div>
+            <div style="width: 210px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 10px; background-color: #000000; height: 50%;"></div>
+        </div>
+        <div></div>
+        <div class="grid-outer-box flex-column" id="flex-top">
+            <div style="width: 45%; background-color: #000000; height: 10px;"></div>
+            <div style="width: 100%; background-color: #00000000; height: 210px;"></div>
+            <div style="width: 100%; background-color: #000000; height: 10px;"></div>
+            <div style="width: 100%; background-color: #00000000; height: 380px;"></div>
+            <div style="width: 80%; background-color: #000000; height: 10px;"></div>
+        </div>
+        <div class="grid-outer-box" id="grid-container">
+            <div class="color-block color-yellow" id="cb1">1</div>
+            <div class="color-block color-red" id="cb2">2</div>
+            <div class="color-block" id="cb3">3</div>
+            <div class="color-block" id="cb4">4</div>
+            <div class="color-block color-yellow" id="cb5">5</div>
+            <div class="color-block" id="cb6">6</div>
+            <div class="color-block color-blue" id="cb7">7</div>
+            <div class="color-block color-black" id="cb8">8</div>
+            <div class="color-block" id="cb9">9</div>
+            <div class="color-block" id="cb10">10</div>
+            <div class="color-block" id="cb11">11</div>
+            <div class="color-block" id="cb12">12</div>
+            <div class="color-block color-yellow" id="cb13">13</div>
+            <div class="color-block color-red" id="cb14">14</div>
+            <div class="color-block" id="cb15">15</div>
+            <div class="color-block" id="cb16">16</div>
+            <div class="color-block color-red" id="cb17">17</div>
+            <div class="color-block color-yellow" id="cb18">18</div>
+            <div class="color-block color-blue" id="cb19">19</div>
+            <div class="color-block color-black" id="cb20">20</div>
+            <div class="color-block" id="cb21">21</div>
+            <div class="color-block" id="cb22">22</div>
+            <div class="color-block" id="cb23">23</div>
+            <div class="color-block" id="cb24">24</div>
+            <div class="color-block" id="cb25">25</div>
+            <div class="color-block" id="cb26">26</div>
+            <div class="color-block" id="cb27">27</div>
+            <div class="color-block color-blue" id="cb28">28</div>
+            <div class="color-block" id="cb29">29</div>
+        </div>
+        <div class="grid-outer-box flex-column" id="flex-bottom">
+            <div style="width: 45%; background-color: #000000; height: 10px;"></div>
+            <div style="width: 100%; background-color: #00000000; height: 100px;"></div>
+            <div style="width: 70%; background-color: #000000; height: 10px;"></div>
+            <div style="width: 100%; background-color: #00000000; height: 210px;"></div>
+            <div style="width: 100%; background-color: #000000; height: 10px;"></div>
+            <div style="width: 100%; background-color: #00000000; height: 100px;"></div>
+            <div style="width: 60%; background-color: #000000; height: 10px;"></div>
+        </div>
+        <div></div>
+        <div class="grid-outer-box flex-row" id="flex-bottom">
+            <div style="width: 260px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 10px; background-color: #000000; height: 100%;"></div>
+            <div style="width: 200px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 10px; background-color: #000000; height: 60%;"></div>
+            <div style="width: 160px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 10px; background-color: #000000; height: 80%;"></div>
+            <div style="width: 530px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 10px; background-color: #000000; height: 80%;"></div>
+        </div>
+        <div></div>
+    </div>
+
+    <script src="./color.js"></script>
+</body>
+
+</html>

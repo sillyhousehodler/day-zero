@@ -11,19 +11,24 @@
 <body id="circuit-body">
     <h1 id="circuit-title">Build a circuit for 2-way light switches</h1>
     <div id="circuit-container">
-        <div class="circuit-region" id="mcb">
+        <div class="fixed-assets" id="mcb">
             <img class="circuit-image" src="./images/mcb-box.png" alt="mcb-box">
         </div>
-        <div class="circuit-region" id="lightbulb">
+        <div class="fixed-assets" id="lightbulb">
             <img class="circuit-image" src="./images/lightbulb-off.png" alt="lightbulb">
         </div>
-        <div class="circuit-region" id="switch-a">
+        <div class="fixed-assets" id="apply-reset">
+            <p id="reset-button">RESET</p>
+            <p id="apply-button">TEST</p>
+        </div>
+        <div class="fixed-assets" id="switch-a">
             <img class="circuit-image" src="./images/switch-off.jpg" alt="switch-a">
         </div>
-        <div class="circuit-region" id="switch-b">
+        <div class="fixed-assets" id="switch-b">
             <img class="circuit-image" src="./images/switch-off.jpg" alt="switch-b">
         </div>
         <div class="circuit-region" id="bridge">
+            <img src="./images/bridge.png" width=100% alt="port">
             <!-- <div id="bridge-interface">
                 <div class="wire-horizontal">
                     <img src="./images/neutral-wire-h.png" width="50" alt="port">
@@ -32,7 +37,8 @@
         </div>
         <div class="circuit-region" id="lightbulb-out">
             <div id="lightbulb-out-interface-1">
-                <img class="port-button" id="lightbulb-port-1" src="./images/port-button.png" width="50" alt="lightbulb-port-1">
+                <img class="port-button" id="lightbulb-port-1" src="./images/port-unselected.png" width="50"
+                    alt="lightbulb-port-1">
                 <!-- <div class="port" id="lightbulb-port-1">
 
                 </div> -->
@@ -41,7 +47,8 @@
                 </div> -->
             </div>
             <div id="lightbulb-out-interface-2">
-                <img class="port-button" id="lightbulb-port-2" src="./images/port-button.png" width="50" alt="lightbulb-port-2">
+                <img class="port-button" id="lightbulb-port-2" src="./images/port-unselected.png" width="50"
+                    alt="lightbulb-port-2">
                 <!-- <div class="port" id="lightbulb-port-2">
                     
                 </div> -->
@@ -59,9 +66,13 @@
                     <img src="./images/live-wire-v.png" width="50">
                 </div>
                 <div class="port">
-                    <img class="port-button" id="switch-a-port-1" src="./images/port-button.png" width="50" alt="switch-a-port-1">
+                    <img class="port-button" id="switch-a-port-1" src="./images/port-unselected.png" width="50"
+                        alt="switch-a-port-1">
                 </div>
             </div>
+        </div>
+        <div class="fixed-assets" id="instruction">
+            <img src="./images/instruction-1.png" width=100%>
         </div>
         <div class="circuit-region" id="switch-out">
             <div id="switch-out-interface">
@@ -69,31 +80,36 @@
                     <img src="./images/live-wire-v.png" width="50">
                 </div>
                 <div class="port">
-                    <img class="port-button" id="switch-b-port-1" src="./images/port-button.png" width="50" alt="switch-b-port-1">
+                    <img class="port-button" id="switch-b-port-1" src="./images/port-unselected.png" width="50"
+                        alt="switch-b-port-1">
                 </div>
             </div>
         </div>
         <div class="circuit-region" id="switch-switch">
             <div id="switch-switch-interface-1">
                 <div class="port">
-                    <img class="port-button" id="switch-a-port-2" src="./images/port-button.png" width="50" alt="switch-a-port-2">
+                    <!-- Initialized answer -->
+                    <img id="switch-a-port-2" src="./images/selected-l1.png" width="50" alt="switch-a-port-2">
                 </div>
                 <div class="wire-horizontal">
                     <img src="./images/live-wire-h.png" width="50">
                 </div>
                 <div class="port">
-                    <img class="port-button" id="switch-b-port-2" src="./images/port-button.png" width="50" alt="switch-b-port-2">
+                    <img class="port-button" id="switch-b-port-2" src="./images/port-unselected.png" width="50"
+                        alt="switch-b-port-2">
                 </div>
             </div>
             <div id="switch-switch-interface-2">
                 <div class="port">
-                    <img class="port-button" id="switch-a-port-3" src="./images/port-button.png" width="50" alt="switch-a-port-3">
+                    <img class="port-button" id="switch-a-port-3" src="./images/port-unselected.png" width="50"
+                        alt="switch-a-port-3">
                 </div>
                 <div class="wire-horizontal">
                     <img src="./images/neutral-wire-h.png" width="50">
                 </div>
                 <div class="port">
-                    <img class="port-button" id="switch-b-port-3" src="./images/port-button.png" width="50" alt="switch-b-port-3">
+                    <img class="port-button" id="switch-b-port-3" src="./images/port-unselected.png" width="50"
+                        alt="switch-b-port-3">
                 </div>
             </div>
         </div>
@@ -101,10 +117,14 @@
 
         </div> -->
     </div>
-    <div id="choice-box">
-        <p class="player-choice" id="com">COM</p>
+    <div class="choice-box" id="choice-lightbulb">
         <p class="player-choice" id="live">LIVE</p>
         <p class="player-choice" id="neutral">NEUTRAL</p>
+    </div>
+    <div class="choice-box" id="choice-others">
+        <p class="player-choice" id="com">COM</p>
+        <p class="player-choice" id="l1">L1</p>
+        <p class="player-choice" id="l2">L2</p>
     </div>
 
     <script src="./circuit.js"></script>

@@ -199,14 +199,9 @@
     align-self: center;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    /* gap: 10px; */
-    /* padding: 10px; */
   }
 
-  .circuit-region {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
+  .circuit-region, .fixed-assets {
     height: 100%;
   }
 
@@ -223,6 +218,39 @@
     grid-row: 1 / 2;
   }
 
+  #apply-reset {
+    grid-column: 5 / 6;
+    /* display: grid;
+    grid-template-rows: 1fr 1fr; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    border-style: dashed;
+    border-radius: 25px;
+  }
+  
+  #apply-reset > p {
+    background-image: url("./images/button.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  #apply-button {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
   #switch-a {
     grid-column: 1 / 2;
     grid-row: 4 / 5;
@@ -236,8 +264,8 @@
   #bridge {
     grid-column: 2 / 6;
     grid-row: 2 / 3;
-    display: grid;
-    grid-template-rows: 1fr 50px 1fr;
+    /* display: grid;
+    grid-template-rows: 1fr 50px 1fr; */
   }
   
   /* #bridge-interface {
@@ -273,6 +301,10 @@
     grid-row: 3 / 4;
     display: grid;
     grid-template-columns: 1fr 50px 1fr;
+  }
+
+  #instruction {
+    grid-column: span 3;
   }
 
   #switch-out {
@@ -334,7 +366,7 @@
     /* height: auto; */
   }
 
-  #choice-box {
+  .choice-box {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -344,10 +376,11 @@
     font-size: 25px;
     text-align: center;
     color: white;
+    width: 150px;
     opacity: 0;
   }
 
-  #choice-box > p {
+  .choice-box > p {
     background-color: #4d4f43;
     padding: 5px;
     margin: 1px;

@@ -1,3 +1,17 @@
+const popUpText = document.getElementById('popup-text');
+
+// blocks need to be found for each color
+const colorAmounts = {
+    yellow: 4,
+    red: 3,
+    blue: 3,
+    black: 2
+};
+
+var activeColor = "";   // current selected color string
+var activeCount = 0;    // consecutive same color selected count
+var finishedColorNumber = 0;  // number of colors finished
+
 document.getElementById('grid-container').addEventListener('click', function(event){
     if (event.target.classList.contains('color-block')){
         switch (event.target.id) {
@@ -24,34 +38,22 @@ document.getElementById('grid-container').addEventListener('click', function(eve
             default:
                 break;
         }
-        // console.log("check event color : " +event.target.style.backgroundColor);
-        CheckColorBlock(event);
+        // console.log("check event color : " + event.target.style.backgroundColor);
+        CheckSelectedColorBlock(event);
     }
 });
 
-// UpdateActiveColorText();
-
-const fadeText = document.getElementById('fade-text');
-const yellowCount = 4;
-const redCount = 3;
-const blueCount = 3;
-const blackCount = 2;
-
-var activeColor = "";
-var activeCount = 0;
-var finishedCount = 0;
-
-function CheckColorBlock(event){
+function CheckSelectedColorBlock(event){
     target = event.target;
     // console.log(target.style.backgroundColor);
     if (target.style.backgroundColor == ""){
-        ClearColorBlocks(event, "empty!");
+        ClearColorBlocks(event, "no color here...");
         return;
     }
     
     if (activeColor == ""){
         activeColor = target.style.backgroundColor;
-        event.target.classList.add('no-events');
+        event.target.classList.add('no-events');    //avoid repeat event on the same selected block
         CheckColorCount(activeColor);
     }else{
         if (target.style.backgroundColor == activeColor){
@@ -64,43 +66,36 @@ function CheckColorBlock(event){
     }
 }
 
-function CheckColorCount(currentColor){
-    const colorName = currentColor;
-    const colorCounts = {
-        yellow: yellowCount,
-        red: redCount,
-        blue: blueCount,
-        black: blackCount
-    };
-    
+function CheckColorCount(colorName){
     activeCount++;
-    
-    if (colorCounts[colorName] == activeCount){
+    // Check if all blocks of the same color are selected
+    if (colorAmounts[colorName] == activeCount){
         const colorCheckBox = document.getElementById('checkbox-' + colorName);
         colorCheckBox.checked = true;
         ResetColorCount();
-        finishedCount++;
-        console.log(finishedCount);
-        if (finishedCount == 4){
+        finishedColorNumber++;
+        console.log(finishedColorNumber);
+        if (finishedColorNumber == 4){
             alert("Congratulations. All colors are done!");
         }
     }
-    // UpdateActiveColorText();
+    // UpdateActiveColorText(); // For debugging
 }
 
 function ClearColorBlocks(event, message){
-    fadeText.innerHTML = message;
-    fadeText.style.left = `${event.clientX}px`;
-    fadeText.style.top = `${event.clientY}px`;
-    fadeText.style.opacity = '1';
+    popUpText.innerHTML = message;
+    popUpText.style.left = `${event.clientX}px`;
+    popUpText.style.top = `${event.clientY}px`;
+    popUpText.style.opacity = '1';
 
-    fadeText.style.animation = 'none';
-    fadeText.offsetHeight;
-    fadeText.style.animation = null;
-    fadeText.style.opacity = '0';
+    popUpText.style.animation = 'none';
+    popUpText.offsetHeight;
+    popUpText.style.animation = null;
+    popUpText.style.opacity = '0';
 
     const colorBlocks = document.getElementsByClassName('no-events');
-    //colorBlocks is a HTMLCollection, so we need to convert it to an array to use forEach
+    // colorBlocks is a HTMLCollection, so we need to convert it to an array to use forEach
+    // reset all selected blocks of the same color becayse of the mismatch
     Array.from(colorBlocks).forEach(colorBlock => {
         if (colorBlock.style.backgroundColor == activeColor){
             colorBlock.style.backgroundColor = "";

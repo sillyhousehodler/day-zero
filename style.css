@@ -79,7 +79,7 @@
     grid-row: span 3;
   }
 
-  #fade-text {
+  #popup-text {
     position: fixed;
     top: 30%;
     left: 50%;

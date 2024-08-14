@@ -339,7 +339,7 @@
     flex-direction: row;
   }
 
-  .port-button, .player-choice {
+  .connector-button, .player-choice {
     cursor: pointer;
   }
 

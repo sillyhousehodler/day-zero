@@ -76,7 +76,9 @@ function CheckColorCount(colorName){
         finishedColorNumber++;
         console.log(finishedColorNumber);
         if (finishedColorNumber == 4){
-            alert("Congratulations. All colors are done!");
+            setTimeout(() => {
+                alert("Congratulations. All colors are done!");
+            }, 500);
         }
     }
     // UpdateActiveColorText(); // For debugging

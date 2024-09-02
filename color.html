@@ -10,38 +10,56 @@
 
 <body id="color-body">
     <h3 id="popup-text"></h3>
-    <div id="debugger-text">
+    <div id="info-panel">
         <h3>Find the same color</h3>
         <form id="checkbox-form">
-            <input type="checkbox" id="checkbox-yellow">
-            <label for="checkbox-yellow" style="color: goldenrod">Yellow</label><br>
-            <input type="checkbox" id="checkbox-red">
-            <label for="checkbox-red" style="color: red">Red</label><br>
-            <input type="checkbox" id="checkbox-blue">
-            <label for="checkbox-blue" style="color: blue">Blue</label><br>
-            <input type="checkbox" id="checkbox-black">
-            <label for="checkbox-black">Black</label>
+            <div>
+                <label for="checkbox-yellow" style="color: goldenrod">Yellow</label><br>
+                <!-- <input type="checkbox" id="checkbox-yellow"><br> -->
+                <label for="checkbox-red" style="color: red">Red</label><br>
+                <!-- <input type="checkbox" id="checkbox-red"><br> -->
+                <label for="checkbox-blue" style="color: blue">Blue</label><br>
+                <!-- <input type="checkbox" id="checkbox-blue"><br> -->
+                <label for="checkbox-black">Black</label><br>
+                <!-- <input type="checkbox" id="checkbox-black"> -->
+            </div>
+            <div>
+                <p class="selected-counter" id="counter-yellow">0/4</p>
+                <p class="selected-counter" id="counter-red">0/3</p>
+                <p class="selected-counter" id="counter-blue">0/3</p>
+                <p class="selected-counter" id="counter-black">0/2</p>
+            </div>
+            <div>
+                <input type="checkbox" id="checkbox-yellow"><br>
+                <input type="checkbox" id="checkbox-red"><br>
+                <input type="checkbox" id="checkbox-blue"><br>
+                <input type="checkbox" id="checkbox-black">
+            </div>
+            <div></div>
+            <div></div>
         </form>
     </div>
     <div class="border-parent">
         <div></div>
-        <div class="grid-outer-box flex-row" id="flex-top">
+        <!-- center top -->
+        <div class="grid-outer-box flex-row align-self-end">
             <div style="width: 10px; background-color: #000000; height: 30%;"></div>
-            <div style="width: 250px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 195px; background-color: #00000000; height: 100%;"></div>
             <div style="width: 10px; background-color: #000000; height: 90%;"></div>
-            <div style="width: 370px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 280px; background-color: #00000000; height: 100%;"></div>
             <div style="width: 10px; background-color: #000000; height: 30%;"></div>
-            <div style="width: 240px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 190px; background-color: #00000000; height: 100%;"></div>
             <div style="width: 10px; background-color: #000000; height: 100%;"></div>
-            <div style="width: 210px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 160px; background-color: #00000000; height: 100%;"></div>
             <div style="width: 10px; background-color: #000000; height: 50%;"></div>
         </div>
         <div></div>
-        <div class="grid-outer-box flex-column" id="flex-top">
+        <!-- left middle -->
+        <div class="grid-outer-box flex-column align-self-end">
             <div style="width: 45%; background-color: #000000; height: 10px;"></div>
-            <div style="width: 100%; background-color: #00000000; height: 210px;"></div>
+            <div style="width: 100%; background-color: #00000000; height: 160px;"></div>
             <div style="width: 100%; background-color: #000000; height: 10px;"></div>
-            <div style="width: 100%; background-color: #00000000; height: 380px;"></div>
+            <div style="width: 100%; background-color: #00000000; height: 375px;"></div>
             <div style="width: 80%; background-color: #000000; height: 10px;"></div>
         </div>
         <div class="grid-outer-box" id="grid-container">
@@ -75,25 +93,27 @@
             <div class="color-block color-blue" id="cb28">28</div>
             <div class="color-block" id="cb29">29</div>
         </div>
-        <div class="grid-outer-box flex-column" id="flex-bottom">
+        <!-- right middle -->
+        <div class="grid-outer-box flex-column align-self-start">
             <div style="width: 45%; background-color: #000000; height: 10px;"></div>
-            <div style="width: 100%; background-color: #00000000; height: 100px;"></div>
+            <div style="width: 100%; background-color: #00000000; height: 75px;"></div>
             <div style="width: 70%; background-color: #000000; height: 10px;"></div>
-            <div style="width: 100%; background-color: #00000000; height: 210px;"></div>
+            <div style="width: 100%; background-color: #00000000; height: 245px;"></div>
             <div style="width: 100%; background-color: #000000; height: 10px;"></div>
-            <div style="width: 100%; background-color: #00000000; height: 100px;"></div>
+            <div style="width: 100%; background-color: #00000000; height: 205px;"></div>
             <div style="width: 60%; background-color: #000000; height: 10px;"></div>
         </div>
         <div></div>
-        <div class="grid-outer-box flex-row" id="flex-bottom">
-            <div style="width: 260px; background-color: #00000000; height: 100%;"></div>
+        <!-- center bottom -->
+        <div class="grid-outer-box flex-row align-self-start">
+            <div style="width: 205px; background-color: #00000000; height: 100%;"></div>
             <div style="width: 10px; background-color: #000000; height: 100%;"></div>
-            <div style="width: 200px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 150px; background-color: #00000000; height: 100%;"></div>
             <div style="width: 10px; background-color: #000000; height: 60%;"></div>
-            <div style="width: 160px; background-color: #00000000; height: 100%;"></div>
+            <div style="width: 320px; background-color: #00000000; height: 100%;"></div>
             <div style="width: 10px; background-color: #000000; height: 80%;"></div>
-            <div style="width: 530px; background-color: #00000000; height: 100%;"></div>
-            <div style="width: 10px; background-color: #000000; height: 80%;"></div>
+            <!-- <div style="width: 530px; background-color: #00000000; height: 100%;"></div> -->
+            <!-- <div style="width: 10px; background-color: #000000; height: 80%;"></div> -->
         </div>
         <div></div>
     </div>

@@ -10,6 +10,7 @@ const colorAmounts = {
 
 var activeColor = "";   // current selected color string
 var activeCount = 0;    // consecutive same color selected count
+var activeCountTextObject = ""; // for display color count
 var finishedColorNumber = 0;  // number of colors finished
 
 document.getElementById('grid-container').addEventListener('click', function(event){
@@ -54,11 +55,11 @@ function CheckSelectedColorBlock(event){
     if (activeColor == ""){
         activeColor = target.style.backgroundColor;
         event.target.classList.add('no-events');    //avoid repeat event on the same selected block
-        CheckColorCount(activeColor);
+        CheckColorCount();
     }else{
         if (target.style.backgroundColor == activeColor){
             event.target.classList.add('no-events');
-            CheckColorCount(activeColor);
+            CheckColorCount();
         }else{
             event.target.style.backgroundColor = "";
             ClearColorBlocks(event, "color mismatch!");
@@ -66,15 +67,21 @@ function CheckSelectedColorBlock(event){
     }
 }
 
-function CheckColorCount(colorName){
+function CheckColorCount(){
     activeCount++;
+    if (activeCountTextObject == ""){
+        activeCountTextObject = document.getElementById('counter-' + activeColor);
+    }
+    activeCountTextObject.innerHTML = activeCount + '/' + colorAmounts[activeColor];
     // Check if all blocks of the same color are selected
-    if (colorAmounts[colorName] == activeCount){
-        const colorCheckBox = document.getElementById('checkbox-' + colorName);
+    if (colorAmounts[activeColor] == activeCount){
+        const colorCheckBox = document.getElementById('checkbox-' + activeColor);
         colorCheckBox.checked = true;
+        colorCheckBox.style.opacity = 1;
         ResetColorCount();
         finishedColorNumber++;
         console.log(finishedColorNumber);
+        console.log(colorCheckBox.opacity);
         if (finishedColorNumber == 4){
             setTimeout(() => {
                 alert("Congratulations. All colors are done!");
@@ -104,16 +111,18 @@ function ClearColorBlocks(event, message){
             colorBlock.classList.remove('no-events');
         }
     });
+    activeCountTextObject.innerHTML = 0 + '/' + colorAmounts[activeColor];
     ResetColorCount();
 }
 
 function ResetColorCount(){
     activeColor = "";
     activeCount = 0;
+    activeCountTextObject = "";
     // UpdateActiveColorText();
 }
 
 function UpdateActiveColorText(){
-    const debuggerText = document.getElementById('debugger-text').querySelector('p');
+    const debuggerText = document.getElementById('guiding-block').querySelector('p');
     debuggerText.innerHTML = activeColor + " x " + activeCount;
 }

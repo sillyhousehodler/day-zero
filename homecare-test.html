@@ -97,14 +97,14 @@
         </div>
     </div>
 
+    <!-- Tesseract.js OCR library -->
     <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
     <script>
-        // Purpose: Detect device type and show the appropriate button
+        // Detect device type and show the appropriate button
         function isMobileDevice() {
             return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
         }
 
-        // Show the correct button based on device
         window.onload = function() {
             if (isMobileDevice()) {
                 document.getElementById('cameraLabel').style.display = 'inline-block';
@@ -113,18 +113,18 @@
             }
         };
 
-        // Purpose: Handle image upload (desktop)
+        // Handle image upload (desktop)
         document.getElementById('uploadInput').addEventListener('change', function(event) {
-            showThumbnail(event.target.files[0]);
+            showThumbnailAndOCR(event.target.files[0]);
         });
 
-        // Purpose: Handle camera capture (mobile)
+        // Handle camera capture (mobile)
         document.getElementById('cameraInput').addEventListener('change', function(event) {
-            showThumbnail(event.target.files[0]);
+            showThumbnailAndOCR(event.target.files[0]);
         });
 
-        // Purpose: Show thumbnail of selected/captured image and run OCR
-        function showThumbnail(file) {
+        // Show thumbnail and run OCR
+        function showThumbnailAndOCR(file) {
             if (!file) return;
             const img = document.getElementById('thumbnail');
             img.src = URL.createObjectURL(file);
@@ -143,9 +143,8 @@
             });
         }
 
-        // Purpose: Button click triggers file input
+        // Button click triggers file input
         document.querySelector('#uploadLabel button').onclick = function() {
-            // Reset the input value to ensure change event always fires
             const uploadInput = document.getElementById('uploadInput');
             uploadInput.value = '';
             uploadInput.click();
@@ -156,51 +155,5 @@
             cameraInput.click();
         };
     </script>
-    <script>
-    // Purpose: Detect device type and show the appropriate button
-    function isMobileDevice() {
-        return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    }
-
-    // Show the correct button based on device
-    window.onload = function() {
-        if (isMobileDevice()) {
-            document.getElementById('cameraLabel').style.display = 'inline-block';
-        } else {
-            document.getElementById('uploadLabel').style.display = 'inline-block';
-        }
-    };
-
-    // Purpose: Handle image upload (desktop)
-    document.getElementById('uploadInput').addEventListener('change', function(event) {
-        showThumbnail(event.target.files[0]);
-    });
-
-    // Purpose: Handle camera capture (mobile)
-    document.getElementById('cameraInput').addEventListener('change', function(event) {
-        showThumbnail(event.target.files[0]);
-    });
-
-    // Purpose: Show thumbnail of selected/captured image
-    function showThumbnail(file) {
-        if (!file) return;
-        const img = document.getElementById('thumbnail');
-        img.src = URL.createObjectURL(file);
-        img.style.display = 'block';
-    }
-
-    // Purpose: Button click triggers file input
-    document.querySelector('#uploadLabel button').onclick = function() {
-        // Reset the input value to ensure change event always fires
-        const uploadInput = document.getElementById('uploadInput');
-        uploadInput.value = '';
-        uploadInput.click();
-    };
-    document.querySelector('#cameraLabel button').onclick = function() {
-        const cameraInput = document.getElementById('cameraInput');
-        cameraInput.value = '';
-        cameraInput.click();
-    };
-</script>
 </body>
 </html>
